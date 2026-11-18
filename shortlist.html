@@ -24,7 +24,7 @@
 
   <main class="container">
     <h2>Bookmarked Recruits & Shortlist</h2>
-    <p class="subtitle">Shortlisted high-potential athletes marked for recruitment trials.</p>
+    <p class="subtitle">Shortlisted high-potential athletes saved in your scouting board.</p>
 
     <div class="feature-box" style="overflow-x: auto;">
       <table style="width: 100%; border-collapse: collapse; text-align: left;">
@@ -35,35 +35,10 @@
             <th style="padding: 1rem; color: #94a3b8;">Position</th>
             <th style="padding: 1rem; color: #94a3b8;">Scout Rating</th>
             <th style="padding: 1rem; color: #94a3b8;">Priority Status</th>
-            <th style="padding: 1rem; color: #94a3b8;">Action</th>
+            <th style="padding: 1rem; color: #94a3b8;">Actions</th>
           </tr>
         </thead>
-        <tbody>
-          <tr style="border-bottom: 1px solid #1e293b;">
-            <td style="padding: 0.9rem;"><strong>Aarav Sharma</strong></td>
-            <td style="padding: 0.9rem;"><span class="sport-badge football">Football</span></td>
-            <td style="padding: 0.9rem;">Attacking Midfielder</td>
-            <td style="padding: 0.9rem;"><strong>9.1 / 10</strong></td>
-            <td style="padding: 0.9rem; color: #86efac; font-weight: bold;">Immediate Trial</td>
-            <td style="padding: 0.9rem;"><a href="profile.html" class="card-link">View</a></td>
-          </tr>
-          <tr style="border-bottom: 1px solid #1e293b;">
-            <td style="padding: 0.9rem;"><strong>Rohan Deshmukh</strong></td>
-            <td style="padding: 0.9rem;"><span class="sport-badge cricket">Cricket</span></td>
-            <td style="padding: 0.9rem;">Fast Bowler</td>
-            <td style="padding: 0.9rem;"><strong>9.4 / 10</strong></td>
-            <td style="padding: 0.9rem; color: #86efac; font-weight: bold;">Under Academy Review</td>
-            <td style="padding: 0.9rem;"><a href="profile.html" class="card-link">View</a></td>
-          </tr>
-          <tr>
-            <td style="padding: 0.9rem;"><strong>Simranjeet Kaur</strong></td>
-            <td style="padding: 0.9rem;"><span class="sport-badge athletics">Athletics</span></td>
-            <td style="padding: 0.9rem;">100m Sprinter</td>
-            <td style="padding: 0.9rem;"><strong>9.0 / 10</strong></td>
-            <td style="padding: 0.9rem; color: #fde047; font-weight: bold;">Fitness Screening</td>
-            <td style="padding: 0.9rem;"><a href="profile.html" class="card-link">View</a></td>
-          </tr>
-        </tbody>
+        <tbody id="shortlist-tbody"></tbody>
       </table>
     </div>
   </main>
@@ -72,5 +47,6 @@
     <p>Project Assignment: Sports Talent Scouting Platform | Developed by Team &lt;!DOCTYPE Trio&gt;</p>
   </footer>
 
+  <script src="js/app.js"></script>
 </body>
 </html>

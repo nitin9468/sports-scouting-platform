@@ -24,54 +24,30 @@
 
   <main class="container">
     <h2>Head-to-Head Athlete Comparison</h2>
-    <p class="subtitle">Direct side-by-side metric comparison across evaluated talent.</p>
+    <p class="subtitle">Choose any two athletes from the database to compare their metrics side-by-side.</p>
+
+    <!-- Player Selectors -->
+    <div class="feature-box" style="margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      <div>
+        <label for="compare-p1" style="display:block; margin-bottom:0.4rem; color:#94a3b8;">Select Athlete 1</label>
+        <select id="compare-p1" style="width:100%; padding:0.6rem; background:#0f172a; color:#fff; border:1px solid #38bdf8; border-radius:6px;"></select>
+      </div>
+      <div>
+        <label for="compare-p2" style="display:block; margin-bottom:0.4rem; color:#94a3b8;">Select Athlete 2</label>
+        <select id="compare-p2" style="width:100%; padding:0.6rem; background:#0f172a; color:#fff; border:1px solid #38bdf8; border-radius:6px;"></select>
+      </div>
+    </div>
 
     <div class="feature-box" style="overflow-x: auto;">
       <table style="width: 100%; border-collapse: collapse; text-align: left;">
         <thead>
           <tr style="border-bottom: 2px solid #334155;">
             <th style="padding: 1rem; color: #94a3b8;">Metric / Attribute</th>
-            <th style="padding: 1rem; color: #38bdf8;">Athlete 1: Marcus Vance</th>
-            <th style="padding: 1rem; color: #38bdf8;">Athlete 2: David Ortiz</th>
+            <th style="padding: 1rem; color: #38bdf8;" id="th-p1">Athlete 1</th>
+            <th style="padding: 1rem; color: #38bdf8;" id="th-p2">Athlete 2</th>
           </tr>
         </thead>
-        <tbody>
-          <tr style="border-bottom: 1px solid #1e293b; background: rgba(255,255,255,0.02);">
-            <td style="padding: 0.9rem;"><strong>Sport / Position</strong></td>
-            <td style="padding: 0.9rem;">Basketball (Point Guard)</td>
-            <td style="padding: 0.9rem;">Basketball (Small Forward)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #1e293b;">
-            <td style="padding: 0.9rem;"><strong>Age</strong></td>
-            <td style="padding: 0.9rem;">19 Years</td>
-            <td style="padding: 0.9rem;">19 Years</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #1e293b; background: rgba(255,255,255,0.02);">
-            <td style="padding: 0.9rem;"><strong>Height / Wingspan</strong></td>
-            <td style="padding: 0.9rem;">6 ft 3 in / 6 ft 6 in</td>
-            <td style="padding: 0.9rem;">6 ft 6 in / 6 ft 10 in</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #1e293b;">
-            <td style="padding: 0.9rem;"><strong>Vertical Leap</strong></td>
-            <td style="padding: 0.9rem; color: #86efac; font-weight: bold;">38 inches (Advantage)</td>
-            <td style="padding: 0.9rem;">34 inches</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #1e293b; background: rgba(255,255,255,0.02);">
-            <td style="padding: 0.9rem;"><strong>Agility Rating</strong></td>
-            <td style="padding: 0.9rem; color: #86efac; font-weight: bold;">94 / 100 (Advantage)</td>
-            <td style="padding: 0.9rem;">86 / 100</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #1e293b;">
-            <td style="padding: 0.9rem;"><strong>Shooting Efficiency</strong></td>
-            <td style="padding: 0.9rem;">82 / 100</td>
-            <td style="padding: 0.9rem; color: #86efac; font-weight: bold;">87 / 100 (Advantage)</td>
-          </tr>
-          <tr>
-            <td style="padding: 0.9rem;"><strong>Overall Scout Grade</strong></td>
-            <td style="padding: 0.9rem;"><span class="rating-badge">8.8 / 10</span></td>
-            <td style="padding: 0.9rem;"><span class="rating-badge">8.6 / 10</span></td>
-          </tr>
-        </tbody>
+        <tbody id="compare-tbody"></tbody>
       </table>
     </div>
   </main>
@@ -80,6 +56,6 @@
     <p>Project Assignment: Sports Talent Scouting Platform | Developed by Team &lt;!DOCTYPE Trio&gt;</p>
   </footer>
 
+  <script src="js/app.js"></script>
 </body>
 </html>
-
