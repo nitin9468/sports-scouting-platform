@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
   <header class="navbar">
     <div class="logo">⚡ ScoutHub</div>
     <nav>
@@ -25,170 +24,84 @@
 
   <div class="container directory-layout">
     
-    <!-- Filter Sidebar (Semantic Form Controls) -->
+    <!-- Filter + Add Athlete Sidebar -->
     <aside class="filter-panel">
       <h3>Filter Prospects</h3>
-      <form>
-        <div class="filter-group">
-          <label for="search">Search Name</label>
-          <input type="search" id="search" placeholder="Search athlete...">
-        </div>
+      <div class="filter-group">
+        <label for="search">Search Name / Position</label>
+        <input type="search" id="search" placeholder="e.g. Aarav or Guard...">
+      </div>
 
+      <div class="filter-group">
+        <label for="sport">Select Sport</label>
+        <select id="sport">
+          <option value="all">All Sports</option>
+          <option value="football">Football</option>
+          <option value="basketball">Basketball</option>
+          <option value="cricket">Cricket</option>
+          <option value="athletics">Athletics</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="min-rating">Minimum Rating: <strong id="rating-label">5.0+</strong></label>
+        <input type="range" id="min-rating" min="5" max="10" step="0.5" value="5">
+      </div>
+
+      <hr style="border-color: #334155; margin: 1.5rem 0;">
+
+      <!-- Register New Athlete Form -->
+      <h3>+ Register New Athlete</h3>
+      <form id="add-athlete-form">
         <div class="filter-group">
-          <label for="sport">Select Sport</label>
-          <select id="sport">
-            <option value="all">All Sports</option>
-            <option value="football">Football (Soccer)</option>
-            <option value="basketball">Basketball</option>
-            <option value="cricket">Cricket</option>
-            <option value="athletics">Track & Field</option>
+          <label for="new-name">Full Name</label>
+          <input type="search" id="new-name" placeholder="Player Name" required>
+        </div>
+        <div class="filter-group">
+          <label for="new-sport">Sport</label>
+          <select id="new-sport">
+            <option value="Football">Football</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Cricket">Cricket</option>
+            <option value="Athletics">Athletics</option>
           </select>
         </div>
-
         <div class="filter-group">
-          <label for="position">Field Position</label>
-          <select id="position">
-            <option value="all">All Positions</option>
-            <option value="midfielder">Midfielder</option>
-            <option value="striker">Striker</option>
-            <option value="guard">Point Guard</option>
-            <option value="bowler">Fast Bowler</option>
-            <option value="sprinter">Sprinter</option>
-          </select>
+          <label for="new-pos">Position</label>
+          <input type="search" id="new-pos" placeholder="e.g. Striker / Bowler" required>
         </div>
-
         <div class="filter-group">
-          <label for="min-rating">Minimum Scout Rating: <strong>8.0+</strong></label>
-          <input type="range" id="min-rating" min="5" max="10" step="0.5" value="8">
+          <label for="new-age">Age & Height</label>
+          <div style="display:flex; gap:0.5rem;">
+            <input type="number" id="new-age" value="18" min="14" max="30" required style="width:50%; padding:0.4rem; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+            <input type="search" id="new-height" placeholder="5'11&quot;" style="width:50%;">
+          </div>
         </div>
-
-        <button type="button" class="cta-btn full-width">Apply Filters</button>
+        <div class="filter-group">
+          <label for="new-club">Academy / Club</label>
+          <input type="search" id="new-club" placeholder="Academy Name">
+        </div>
+        <div class="filter-group">
+          <label for="new-speed">Speed (1-100) & Skill (1-100)</label>
+          <div style="display:flex; gap:0.5rem;">
+            <input type="number" id="new-speed" value="85" min="40" max="100" required style="width:50%; padding:0.4rem; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+            <input type="number" id="new-skill" value="88" min="40" max="100" required style="width:50%; padding:0.4rem; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+          </div>
+        </div>
+        <div class="filter-group">
+          <label for="new-rating">Overall Rating (1-10)</label>
+          <input type="number" id="new-rating" value="8.5" step="0.1" min="1" max="10" required style="width:100%; padding:0.4rem; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+        <button type="submit" class="cta-btn full-width">Add Athlete</button>
       </form>
     </aside>
 
     <!-- Athlete Cards Directory -->
     <main class="directory-content">
-      <div class="directory-header">
-        <h2>Prospect Directory (6 Available)</h2>
+      <div class="directory-header" style="margin-bottom: 1.2rem;">
+        <h2 id="directory-count">Prospect Directory</h2>
       </div>
-
-      <div class="card-grid">
-
-        <!-- Prospect 1 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge football">Football</span>
-            <span class="rating-badge">9.1 / 10</span>
-          </div>
-          <h3>Aarav Sharma</h3>
-          <p class="position">Attacking Midfielder</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 18 | <strong>Height:</strong> 5'10"</li>
-            <li><strong>Speed:</strong> 89/100</li>
-            <li><strong>Stamina:</strong> 88/100</li>
-          </ul>
-          <div class="card-actions">
-            <a href="profile.html" class="card-link">Full Dossier</a>
-            <a href="shortlist.html" class="bookmark-btn">+ Shortlist</a>
-          </div>
-        </article>
-
-        <!-- Prospect 2 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge basketball">Basketball</span>
-            <span class="rating-badge">8.8 / 10</span>
-          </div>
-          <h3>Marcus Vance</h3>
-          <p class="position">Point Guard</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 19 | <strong>Height:</strong> 6'3"</li>
-            <li><strong>Vertical:</strong> 38 in</li>
-            <li><strong>Agility:</strong> 94/100</li>
-          </ul>
-          <div class="card-actions">
-            <a href="profile.html" class="card-link">Full Dossier</a>
-            <a href="shortlist.html" class="bookmark-btn">+ Shortlist</a>
-          </div>
-        </article>
-
-        <!-- Prospect 3 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge cricket">Cricket</span>
-            <span class="rating-badge">9.4 / 10</span>
-          </div>
-          <h3>Rohan Deshmukh</h3>
-          <p class="position">Right-Arm Fast Bowler</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 19 | <strong>Height:</strong> 6'2"</li>
-            <li><strong>Bowling Pace:</strong> 144 km/h</li>
-            <li><strong>Accuracy:</strong> 88/100</li>
-          </ul>
-          <div class="card-actions">
-            <a href="profile.html" class="card-link">Full Dossier</a>
-            <a href="shortlist.html" class="bookmark-btn">+ Shortlist</a>
-          </div>
-        </article>
-
-        <!-- Prospect 4 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge football">Football</span>
-            <span class="rating-badge">8.4 / 10</span>
-          </div>
-          <h3>Vikram Negi</h3>
-          <p class="position">Center Back</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 20 | <strong>Height:</strong> 6'1"</li>
-            <li><strong>Tackling:</strong> 91/100</li>
-            <li><strong>Strength:</strong> 93/100</li>
-          </ul>
-          <div class="card-actions">
-            <a href="profile.html" class="card-link">Full Dossier</a>
-            <a href="shortlist.html" class="bookmark-btn">+ Shortlist</a>
-          </div>
-        </article>
-
-        <!-- Prospect 5 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge basketball">Basketball</span>
-            <span class="rating-badge">8.6 / 10</span>
-          </div>
-          <h3>David Ortiz</h3>
-          <p class="position">Small Forward</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 19 | <strong>Height:</strong> 6'6"</li>
-            <li><strong>Wingspan:</strong> 6'10"</li>
-            <li><strong>Shooting:</strong> 87/100</li>
-          </ul>
-          <div class="card-actions">
-            <a href="profile.html" class="card-link">Full Dossier</a>
-            <a href="shortlist.html" class="bookmark-btn">+ Shortlist</a>
-          </div>
-        </article>
-
-        <!-- Prospect 6 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge athletics">Athletics</span>
-            <span class="rating-badge">9.0 / 10</span>
-          </div>
-          <h3>Simranjeet Kaur</h3>
-          <p class="position">100m / 200m Sprinter</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 18 | <strong>Height:</strong> 5'7"</li>
-            <li><strong>100m PB:</strong> 11.42s</li>
-            <li><strong>Explosiveness:</strong> 96/100</li>
-          </ul>
-          <div class="card-actions">
-            <a href="profile.html" class="card-link">Full Dossier</a>
-            <a href="shortlist.html" class="bookmark-btn">+ Shortlist</a>
-          </div>
-        </article>
-
-      </div>
+      <div class="card-grid" id="directory-grid"></div>
     </main>
   </div>
 
@@ -196,5 +109,6 @@
     <p>Project Assignment: Sports Talent Scouting Platform | Developed by Team &lt;!DOCTYPE Trio&gt;</p>
   </footer>
 
+  <script src="js/app.js"></script>
 </body>
 </html>

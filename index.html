@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
   <header class="navbar">
     <div class="logo">⚡ ScoutHub</div>
     <nav>
@@ -25,94 +24,68 @@
 
   <!-- Hero Banner -->
   <header class="hero">
+    <span class="hero-tag">NEXT-GEN ATHLETE ANALYTICS</span>
     <h1>Sports Talent Scouting Platform</h1>
-    <p>Organize, evaluate, and track next-generation athletic talent across multiple sports disciplines.</p>
-    <a href="athletes.html" class="cta-btn">Browse Talent Database</a>
+    <p>Organize, evaluate, and track next-generation athletic talent across multiple sports disciplines with structured metrics and live scouting reports.</p>
+    <div class="hero-actions">
+      <a href="athletes.html" class="cta-btn">Browse Talent Database</a>
+      <a href="report.html" class="secondary-btn">+ Log Scouting Report</a>
+    </div>
+
+    <!-- Live Platform Stats Strip -->
+    <div class="stats-strip">
+      <div class="stat-pill">
+        <span class="stat-num" id="stat-total">4</span>
+        <span class="stat-lbl">Verified Prospects</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num">4</span>
+        <span class="stat-lbl">Sports Disciplines</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num" id="stat-reports">3</span>
+        <span class="stat-lbl">Scouting Reports</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num" id="stat-shortlist">2</span>
+        <span class="stat-lbl">Shortlisted Targets</span>
+      </div>
+    </div>
   </header>
 
-  <!-- Main Showcase -->
   <main class="container">
+    <!-- Clickable Platform Overview -->
     <section>
       <h2>Platform Overview</h2>
-      <p class="subtitle">Designed for professional sports scouts, academies, and coaches.</p>
+      <p class="subtitle">Click any module below to explore live scouting tools.</p>
       
       <div class="features-grid">
-        <article class="feature-box">
-          <h3>📊 Athlete Profiles</h3>
+        <a href="profile.html" class="feature-box link-card">
+          <h3>📊 Athlete Profiles &rarr;</h3>
           <p>Comprehensive biometrics, position breakdowns, performance metrics, and career trajectory stats.</p>
-        </article>
-        <article class="feature-box">
-          <h3>📝 Scouting Reports</h3>
-          <p>Detailed technical notes, strengths, improvement areas, and live quantitative grading.</p>
-        </article>
-        <article class="feature-box">
-          <h3>⚖️ Head-to-Head Comparison</h3>
+        </a>
+        <a href="report.html" class="feature-box link-card">
+          <h3>📝 Scouting Reports &rarr;</h3>
+          <p>Log detailed technical notes, strengths, improvement areas, and live quantitative grading.</p>
+        </a>
+        <a href="compare.html" class="feature-box link-card">
+          <h3>⚖️ Head-to-Head Comparison &rarr;</h3>
           <p>Side-by-side metric matrix comparing speed, physical stamina, tactical awareness, and ratings.</p>
-        </article>
+        </a>
       </div>
     </section>
 
-    <!-- Featured Prospects Section -->
+    <!-- Featured Athletes (Dynamically linked to Profile) -->
     <section class="featured-section">
       <h2>Top Scouted Prospects</h2>
-      <div class="card-grid">
-        
-        <!-- Athlete Card 1 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge football">Football</span>
-            <span class="rating-badge">9.1 / 10</span>
-          </div>
-          <h3>Aarav Sharma</h3>
-          <p class="position">Attacking Midfielder</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 18</li>
-            <li><strong>Pace:</strong> 89/100</li>
-            <li><strong>Passing:</strong> 93/100</li>
-          </ul>
-          <a href="profile.html" class="card-link">View Full Profile &rarr;</a>
-        </article>
-
-        <!-- Athlete Card 2 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge basketball">Basketball</span>
-            <span class="rating-badge">8.8 / 10</span>
-          </div>
-          <h3>Marcus Vance</h3>
-          <p class="position">Point Guard</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 19</li>
-            <li><strong>Vertical:</strong> 38 in</li>
-            <li><strong>Agility:</strong> 94/100</li>
-          </ul>
-          <a href="profile.html" class="card-link">View Full Profile &rarr;</a>
-        </article>
-
-        <!-- Athlete Card 3 -->
-        <article class="athlete-card">
-          <div class="card-header">
-            <span class="sport-badge cricket">Cricket</span>
-            <span class="rating-badge">9.4 / 10</span>
-          </div>
-          <h3>Rohan Deshmukh</h3>
-          <p class="position">Right-Arm Fast Bowler</p>
-          <ul class="card-stats">
-            <li><strong>Age:</strong> 19</li>
-            <li><strong>Top Speed:</strong> 144 km/h</li>
-            <li><strong>Control:</strong> 88/100</li>
-          </ul>
-          <a href="profile.html" class="card-link">View Full Profile &rarr;</a>
-        </article>
-
-      </div>
+      <div class="card-grid" id="home-featured-grid"></div>
     </section>
   </main>
 
-  <!-- Standard Footer -->
   <footer>
     <p>Project Assignment: Sports Talent Scouting Platform | Developed by Team &lt;!DOCTYPE Trio&gt;</p>
   </footer>
 
+  <script src="js/app.js"></script>
 </body>
 </html>
