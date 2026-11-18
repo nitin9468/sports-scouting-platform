@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Athlete Profile - Aarav Sharma</title>
+  <title>Athlete Profile - ScoutHub</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,22 +23,29 @@
   </header>
 
   <main class="container">
+    <!-- Switch Between Any Athlete -->
+    <div class="feature-box" style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <strong>Select Athlete Dossier:</strong>
+      </div>
+      <select id="profile-switcher" style="padding: 0.5rem 1rem; background: #0f172a; color: #fff; border: 1px solid #38bdf8; border-radius: 6px; min-width: 260px;"></select>
+    </div>
+
     <div class="directory-layout">
       <!-- Athlete Bio Sidebar -->
       <aside class="filter-panel">
-        <span class="sport-badge football">Football</span>
-        <h2 style="margin-top: 0.5rem;">Aarav Sharma</h2>
-        <p class="position">Attacking Midfielder</p>
+        <span class="sport-badge football" id="prof-sport">Football</span>
+        <h2 style="margin-top: 0.5rem;" id="prof-name">Aarav Sharma</h2>
+        <p class="position" id="prof-pos">Attacking Midfielder</p>
         <hr style="border-color: #334155; margin-bottom: 1rem;">
         <ul class="card-stats">
-          <li><strong>Age:</strong> 18</li>
-          <li><strong>Height:</strong> 5 ft 10 in</li>
-          <li><strong>Weight:</strong> 68 kg</li>
-          <li><strong>Dominant Foot:</strong> Right</li>
-          <li><strong>Current Club:</strong> Regional Youth Academy</li>
-          <li><strong>Scout Rating:</strong> <span class="rating-badge">9.1 / 10</span></li>
+          <li><strong>Age:</strong> <span id="prof-age">18</span></li>
+          <li><strong>Height:</strong> <span id="prof-height">5'10"</span></li>
+          <li><strong>Weight:</strong> <span id="prof-weight">68 kg</span></li>
+          <li><strong>Current Club:</strong> <span id="prof-club">Regional Youth Academy</span></li>
+          <li><strong>Scout Rating:</strong> <span class="rating-badge" id="prof-rating">9.1 / 10</span></li>
         </ul>
-        <a href="shortlist.html" class="cta-btn full-width" style="display: block; text-decoration: none;">Add to Shortlist</a>
+        <button type="button" id="prof-shortlist-btn" class="cta-btn full-width">+ Add to Shortlist</button>
       </aside>
 
       <!-- Athlete Metrics & Scouting History -->
@@ -46,42 +53,35 @@
         <article class="feature-box" style="margin-bottom: 1.5rem;">
           <h3>Physical & Technical Metrics</h3>
           <br>
-          <label>Pace & Acceleration (89%)</label>
+          <label id="bar-speed-lbl">Speed & Explosiveness (89%)</label>
           <div style="background:#0f172a; border-radius:4px; height:12px; margin: 6px 0 16px 0;">
-            <div style="background:#38bdf8; width:89%; height:100%; border-radius:4px;"></div>
+            <div id="bar-speed" style="background:#38bdf8; width:89%; height:100%; border-radius:4px; transition: width 0.3s;"></div>
           </div>
 
-          <label>Passing Accuracy (93%)</label>
+          <label id="bar-skill-lbl">Technical Skill (93%)</label>
           <div style="background:#0f172a; border-radius:4px; height:12px; margin: 6px 0 16px 0;">
-            <div style="background:#38bdf8; width:93%; height:100%; border-radius:4px;"></div>
+            <div id="bar-skill" style="background:#38bdf8; width:93%; height:100%; border-radius:4px; transition: width 0.3s;"></div>
           </div>
 
-          <label>Vision & Tactical Awareness (90%)</label>
+          <label id="bar-tactical-lbl">Tactical Awareness (90%)</label>
           <div style="background:#0f172a; border-radius:4px; height:12px; margin: 6px 0 16px 0;">
-            <div style="background:#38bdf8; width:90%; height:100%; border-radius:4px;"></div>
+            <div id="bar-tactical" style="background:#38bdf8; width:90%; height:100%; border-radius:4px; transition: width 0.3s;"></div>
           </div>
 
-          <label>Stamina & Work Rate (88%)</label>
+          <label id="bar-stamina-lbl">Stamina & Conditioning (88%)</label>
           <div style="background:#0f172a; border-radius:4px; height:12px; margin: 6px 0 16px 0;">
-            <div style="background:#38bdf8; width:88%; height:100%; border-radius:4px;"></div>
+            <div id="bar-stamina" style="background:#38bdf8; width:88%; height:100%; border-radius:4px; transition: width 0.3s;"></div>
           </div>
         </article>
 
-        <!-- Past Scouting Reports -->
+        <!-- Dynamic Scouting Reports -->
         <article class="feature-box">
-          <h3>Field Scouting Reports</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3>Field Scouting Reports</h3>
+            <a href="report.html" class="card-link">+ Write Report</a>
+          </div>
           <br>
-          <details open style="margin-bottom: 1rem; background: #0f172a; padding: 1rem; border-radius: 6px;">
-            <summary style="cursor: pointer; font-weight: bold; color: #38bdf8;">State Championship Quarterfinal — Lead Scout Evaluation</summary>
-            <p style="margin-top: 0.5rem; color: #cbd5e1;"><strong>Strengths:</strong> Exceptional first touch and spatial awareness in the final third. Operates smoothly under high physical press.</p>
-            <p style="margin-top: 0.3rem; color: #94a3b8;"><strong>Improvement Areas:</strong> Physical recovery speed on defensive counter-attacks.</p>
-          </details>
-
-          <details style="background: #0f172a; padding: 1rem; border-radius: 6px;">
-            <summary style="cursor: pointer; font-weight: bold; color: #38bdf8;">Zonal Talent Showcase — Technical Assessment</summary>
-            <p style="margin-top: 0.5rem; color: #cbd5e1;"><strong>Strengths:</strong> Precise set-piece delivery and quick decision-making under defensive transitions.</p>
-            <p style="margin-top: 0.3rem; color: #94a3b8;"><strong>Improvement Areas:</strong> Aerial duel winning percentage.</p>
-          </details>
+          <div id="prof-reports-list"></div>
         </article>
       </section>
     </div>
@@ -91,5 +91,6 @@
     <p>Project Assignment: Sports Talent Scouting Platform | Developed by Team &lt;!DOCTYPE Trio&gt;</p>
   </footer>
 
+  <script src="js/app.js"></script>
 </body>
 </html>
